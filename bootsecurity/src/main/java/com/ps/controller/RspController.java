@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class RspController {
     @GetMapping("/ps")
     public String check(){
-        return "Hello -- Security";
+        return "Hello --- Security";
     }
 }
