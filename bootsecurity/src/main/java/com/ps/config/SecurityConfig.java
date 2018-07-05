@@ -28,9 +28,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     	for(String url: ignoreUrls) {
     		http.authorizeRequests().antMatchers(url).permitAll();
     	}
-        http.authorizeRequests().anyRequest().authenticated();
-        http.httpBasic();
-        http.csrf().disable();
+    	http
+    	//.formLogin()
+    	.httpBasic()
+    	.and()
+    	.authorizeRequests()
+    	.anyRequest()
+    	.authenticated();
+        //http.authorizeRequests().anyRequest().authenticated();
+        // http.httpBasic();
+        // http.csrf().disable();
     }
 
     @Autowired
