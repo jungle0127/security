@@ -1,39 +1,43 @@
 # Servlet, Filter, Listener, Interceptor Introduction
 
 ##Servlet
-ServletÊÇÓÃÀ´´¦Àí¿Í»§¶ËÇëÇóµÄ¶¯Ì¬×ÊÔ´£¬Ò²¾ÍÊÇµ±ÎÒÃÇÔÚä¯ÀÀÆ÷ÖĞ¼üÈëÒ»¸öµØÖ·»Ø³µÌø×ªºó£¬ÇëÇó¾Í»á±»·¢ËÍµ½¶ÔÓ¦µÄServletÉÏ½øĞĞ´¦Àí¡£ 
+Servletæ˜¯ç”¨æ¥å¤„ç†å®¢æˆ·ç«¯è¯·æ±‚çš„åŠ¨æ€èµ„æºï¼Œä¹Ÿå°±æ˜¯å½“æˆ‘ä»¬åœ¨æµè§ˆå™¨ä¸­é”®å…¥ä¸€ä¸ªåœ°å€å›è½¦è·³è½¬åï¼Œè¯·æ±‚å°±ä¼šè¢«å‘é€åˆ°å¯¹åº”çš„Servletä¸Šè¿›è¡Œå¤„ç†ã€‚ 
 
 ## Filter
-filterÓëservletÔÚºÜ¶àµÄ·½Ãæ¼«ÆäÏàËÆ£¬µ«ÊÇÒ²ÓĞ²»Í¬£¬ÀıÈçfilterºÍservletÒ»Ñù¶¼ÓÖÈı¸öÉúÃüÖÜÆÚ·½·¨£¬Í¬Ê±ËûÃÇÔÚweb.xmlÖĞµÄÅäÖÃÎÄ¼şÒ²ÊÇ²î²»¶àµÄ¡¢ µ«ÊÇservletÖ÷Òª¸ºÔğ´¦ÀíÇëÇó£¬¶øfilterÖ÷Òª¸ºÔğÀ¹½ØÇëÇó£¬ºÍ·ÅĞĞ¡£
+filterä¸servletåœ¨å¾ˆå¤šçš„æ–¹é¢æå…¶ç›¸ä¼¼ï¼Œä½†æ˜¯ä¹Ÿæœ‰ä¸åŒï¼Œä¾‹å¦‚filterå’Œservletä¸€æ ·éƒ½åˆä¸‰ä¸ªç”Ÿå‘½å‘¨æœŸæ–¹æ³•ï¼ŒåŒæ—¶ä»–ä»¬åœ¨web.xmlä¸­çš„é…ç½®æ–‡ä»¶ä¹Ÿæ˜¯å·®ä¸å¤šçš„ã€ ä½†æ˜¯servletä¸»è¦è´Ÿè´£å¤„ç†è¯·æ±‚ï¼Œè€Œfilterä¸»è¦è´Ÿè´£æ‹¦æˆªè¯·æ±‚ï¼Œå’Œæ”¾è¡Œã€‚
 
-filterËÄÖÖÀ¹½Ø·½Ê½
-   REQUEST£ºÖ±½Ó·ÃÎÊÄ¿±ê×ÊÔ´Ê±Ö´ĞĞ¹ıÂËÆ÷¡£°üÀ¨£ºÔÚµØÖ·À¸ÖĞÖ±½Ó·ÃÎÊ¡¢±íµ¥Ìá½»¡¢³¬Á´½Ó¡¢ÖØ¶¨Ïò£¬Ö»ÒªÔÚµØÖ·À¸ÖĞ¿ÉÒÔ¿´µ½Ä¿±ê×ÊÔ´µÄÂ·¾¶£¬¾ÍÊÇREQUEST£»
-    FORWARD£º×ª·¢·ÃÎÊÖ´ĞĞ¹ıÂËÆ÷¡£°üÀ¨RequestDispatcher#forward()·½·¨¡¢< jsp:forward>±êÇ©¶¼ÊÇ×ª·¢·ÃÎÊ£»
-    INCLUDE£º°üº¬·ÃÎÊÖ´ĞĞ¹ıÂËÆ÷¡£°üÀ¨RequestDispatcher#include()·½·¨¡¢< jsp:include>±êÇ©¶¼ÊÇ°üº¬·ÃÎÊ£»
-    ERROR£ºµ±Ä¿±ê×ÊÔ´ÔÚweb.xmlÖĞÅäÖÃÎª< error-page>ÖĞÊ±£¬²¢ÇÒÕæµÄ³öÏÖÁËÒì³££¬×ª·¢µ½Ä¿±ê×ÊÔ´Ê±£¬»áÖ´ĞĞ¹ıÂËÆ÷¡£
+filterå››ç§æ‹¦æˆªæ–¹å¼
+   REQUESTï¼šç›´æ¥è®¿é—®ç›®æ ‡èµ„æºæ—¶æ‰§è¡Œè¿‡æ»¤å™¨ã€‚åŒ…æ‹¬ï¼šåœ¨åœ°å€æ ä¸­ç›´æ¥è®¿é—®ã€è¡¨å•æäº¤ã€è¶…é“¾æ¥ã€é‡å®šå‘ï¼Œåªè¦åœ¨åœ°å€æ ä¸­å¯ä»¥çœ‹åˆ°ç›®æ ‡èµ„æºçš„è·¯å¾„ï¼Œå°±æ˜¯REQUESTï¼›
+    FORWARDï¼šè½¬å‘è®¿é—®æ‰§è¡Œè¿‡æ»¤å™¨ã€‚åŒ…æ‹¬RequestDispatcher#forward()æ–¹æ³•ã€< jsp:forward>æ ‡ç­¾éƒ½æ˜¯è½¬å‘è®¿é—®ï¼›
+    INCLUDEï¼šåŒ…å«è®¿é—®æ‰§è¡Œè¿‡æ»¤å™¨ã€‚åŒ…æ‹¬RequestDispatcher#include()æ–¹æ³•ã€< jsp:include>æ ‡ç­¾éƒ½æ˜¯åŒ…å«è®¿é—®ï¼›
+    ERRORï¼šå½“ç›®æ ‡èµ„æºåœ¨web.xmlä¸­é…ç½®ä¸º< error-page>ä¸­æ—¶ï¼Œå¹¶ä¸”çœŸçš„å‡ºç°äº†å¼‚å¸¸ï¼Œè½¬å‘åˆ°ç›®æ ‡èµ„æºæ—¶ï¼Œä¼šæ‰§è¡Œè¿‡æ»¤å™¨ã€‚
 
 ## Listener
-¼àÌıApplication¡¢Session¡¢Request¶ÔÏó£¬µ±ÕâĞ©¶ÔÏó·¢Éú±ä»¯¾Í»áµ÷ÓÃ¶ÔÓ¦µÄ¼àÌı·½·¨¡£
- - ServletContext£¨¼àÌıApplication£©
- 	ÉúÃüÖÜÆÚ¼àÌı£ºServletContextListener
-	ÊôĞÔ¼àÌı£ºServletContextAttributeListener
-- HttpSession£¨¼àÌıSession£© 
-	ÉúÃüÖÜÆÚ¼àÌı£ºHttpSessionListener
-	ÊôĞÔ¼àÌı£ºHttpSessioniAttributeListener
--  ServletRequest£¨¼àÌıRequest£©
-	ÉúÃüÖÜÆÚ¼àÌı£ºServletRequestListener
-	ÊôĞÔ¼àÌı£ºServletRequestAttributeListener
- - ¸ĞÖªSession¼àÌı£º
-1£ºHttpSessionBindingListener¼àÌı
-¢ÅÔÚĞèÒª¼àÌıµÄÊµÌåÀàÊµÏÖHttpSessionBindingListener½Ó¿Ú
-¢ÆÖØĞ´valueBound()·½·¨£¬Õâ·½·¨ÊÇÔÚµ±¸ÃÊµÌåÀà±»·Åµ½SessionÖĞÊ±£¬´¥·¢¸Ã·½·¨
-¢ÇÖØĞ´valueUnbound()·½·¨£¬Õâ·½·¨ÊÇÔÚµ±¸ÃÊµÌåÀà´ÓSessionÖĞ±»ÒÆ³ıÊ±£¬´¥·¢¸Ã·½·¨
-2£ºHttpSessionActivationListener¼àÌı
-¢ÅÔÚĞèÒª¼àÌıµÄÊµÌåÀàÊµÏÖHttpSessionActivationListener½Ó¿Ú
-¢ÆÖØĞ´sessionWillPassivate()·½·¨£¬Õâ·½·¨ÊÇÔÚµ±¸ÃÊµÌåÀà±»ĞòÁĞ»¯Ê±£¬´¥·¢¸Ã·½·¨
-¢ÇÖØĞ´sessionDidActivate()·½·¨£¬Õâ·½·¨ÊÇÔÚµ±¸ÃÊµÌåÀà±»·´ĞòÁĞ»¯Ê±£¬´¥·¢¸Ã·½·¨
+ç›‘å¬Applicationã€Sessionã€Requestå¯¹è±¡ï¼Œå½“è¿™äº›å¯¹è±¡å‘ç”Ÿå˜åŒ–å°±ä¼šè°ƒç”¨å¯¹åº”çš„ç›‘å¬æ–¹æ³•ã€‚
+ - ServletContextï¼ˆç›‘å¬Applicationï¼‰
+ 	ç”Ÿå‘½å‘¨æœŸç›‘å¬ï¼šServletContextListener
+	å±æ€§ç›‘å¬ï¼šServletContextAttributeListener
+- HttpSessionï¼ˆç›‘å¬Sessionï¼‰ 
+	ç”Ÿå‘½å‘¨æœŸç›‘å¬ï¼šHttpSessionListener
+	å±æ€§ç›‘å¬ï¼šHttpSessioniAttributeListener
+-  ServletRequestï¼ˆç›‘å¬Requestï¼‰
+	ç”Ÿå‘½å‘¨æœŸç›‘å¬ï¼šServletRequestListener
+	å±æ€§ç›‘å¬ï¼šServletRequestAttributeListener
+ - æ„ŸçŸ¥Sessionç›‘å¬ï¼š
+1ï¼šHttpSessionBindingListenerç›‘å¬
+â‘´åœ¨éœ€è¦ç›‘å¬çš„å®ä½“ç±»å®ç°HttpSessionBindingListeneræ¥å£
+â‘µé‡å†™valueBound()æ–¹æ³•ï¼Œè¿™æ–¹æ³•æ˜¯åœ¨å½“è¯¥å®ä½“ç±»è¢«æ”¾åˆ°Sessionä¸­æ—¶ï¼Œè§¦å‘è¯¥æ–¹æ³•
+â‘¶é‡å†™valueUnbound()æ–¹æ³•ï¼Œè¿™æ–¹æ³•æ˜¯åœ¨å½“è¯¥å®ä½“ç±»ä»Sessionä¸­è¢«ç§»é™¤æ—¶ï¼Œè§¦å‘è¯¥æ–¹æ³•
+2ï¼šHttpSessionActivationListenerç›‘å¬
+â‘´åœ¨éœ€è¦ç›‘å¬çš„å®ä½“ç±»å®ç°HttpSessionActivationListeneræ¥å£
+â‘µé‡å†™sessionWillPassivate()æ–¹æ³•ï¼Œè¿™æ–¹æ³•æ˜¯åœ¨å½“è¯¥å®ä½“ç±»è¢«åºåˆ—åŒ–æ—¶ï¼Œè§¦å‘è¯¥æ–¹æ³•
+â‘¶é‡å†™sessionDidActivate()æ–¹æ³•ï¼Œè¿™æ–¹æ³•æ˜¯åœ¨å½“è¯¥å®ä½“ç±»è¢«ååºåˆ—åŒ–æ—¶ï¼Œè§¦å‘è¯¥æ–¹æ³•
 
 Refer:  https://blog.csdn.net/xiaojie119120/article/details/73274759
 
 ## Interceptor
-interceptor ÊÇstruts2 Ìá¹©µÄfilter¡£
+SpringMVC ä¸­çš„Interceptor æ‹¦æˆªå™¨ä¸»è¦ä½œç”¨æ˜¯æ‹¦æˆªç”¨æˆ·çš„è¯·æ±‚å¹¶è¿›è¡Œç›¸åº”çš„å¤„ç†
+https://www.cnblogs.com/hy928302776/articles/6956747.html
+
+## Filter & Interceptor åŒºåˆ«
+https://blog.csdn.net/xiaoyaotan_111/article/details/53817918
