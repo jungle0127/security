@@ -1,8 +1,5 @@
 server:
-  port: 8081
+  port: 8083
   servlet:
     context-path: /security
-security:
-   basic:
-      enabled: false
 
