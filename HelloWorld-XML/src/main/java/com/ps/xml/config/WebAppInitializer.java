@@ -4,6 +4,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
 /**
  * 系统初始化类
+ * 用于取代web.xml
  * @author Administrator
  *
  */
