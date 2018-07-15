@@ -9,6 +9,7 @@
     <modules>
         <module>bootsecurity</module>
     <module>HelloWorld-XML</module>
+    <module>HelloWorld-JavaConfig</module>
   </modules>
     <properties>
         <java.version>1.8</java.version>
