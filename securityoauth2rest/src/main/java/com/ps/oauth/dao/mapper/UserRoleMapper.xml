@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ps.oauth.dao.domain.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.ps.oauth.dao.model.UserRole">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+    <result column="active" jdbcType="INTEGER" property="active" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from user_role
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.ps.oauth.dao.model.UserRole">
+    insert into user_role (id, role_name, active
+      )
+    values (#{id,jdbcType=BIGINT}, #{roleName,jdbcType=VARCHAR}, #{active,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ps.oauth.dao.model.UserRole">
+    update user_role
+    set role_name = #{roleName,jdbcType=VARCHAR},
+      active = #{active,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select id, role_name, active
+    from user_role
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, role_name, active
+    from user_role
+    order by id desc
+  </select>
+</mapper>
